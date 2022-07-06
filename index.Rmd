@@ -2,6 +2,7 @@
 title: "My awesome website"
 output: 
   html_document:
+    code_folding: hide
     toc: true
     toc_float: true
   
@@ -30,8 +31,23 @@ Let's link to useful tools for data science:
 
 ## Local image
 Here's my cat, ted:
+<img src="images/ted.jpg" style="width:75%">
 
 ![](image/ted.jpeg)
 ## Link to page within the site
 
 [About me](about.html)
+
+## Quarterly results {.tabset}
+
+### By Product
+
+This is my first tab and i can do stuff
+
+### By Region
+
+This is my second tab and it does other stuff
+
+# This is a new section
+
+and it's really great

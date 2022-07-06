@@ -33,6 +33,7 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
@@ -220,6 +221,9 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -344,6 +348,14 @@ div.tocify {
 
 <div id="header">
 
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
 
 
 <h1 class="title toc-ignore">My awesome website</h1>
@@ -358,8 +370,8 @@ div.tocify {
 ## Here’s a subsection</p>
 <p>And here’s some addition text…</p>
 <pre class="r"><code>rnorm(10)</code></pre>
-<pre><code>##  [1]  0.81575495 -0.18310461 -0.99630119 -1.60720944  0.48897900 -1.21168505
-##  [7]  0.05228463  0.13304983 -0.96642465 -1.72523358</code></pre>
+<pre><code>##  [1]  1.30753314  1.03703140  0.29815786 -0.11795131 -0.55176615  1.06091921
+##  [7]  0.02875249 -0.48381836  0.31436982 -0.97203709</code></pre>
 <div id="links-to-other-websites" class="section level2">
 <h2>Links to other websites</h2>
 <p>Let’s link to useful tools for data science:</p>
@@ -370,10 +382,25 @@ div.tocify {
 </div>
 <div id="local-image" class="section level2">
 <h2>Local image</h2>
-<p>Here’s my cat, ted:</p>
+<p>Here’s my cat, ted: <img src="images/ted.jpg" style="width:75%"></p>
 <p><img src="image/ted.jpeg" /> ## Link to page within the site</p>
 <p><a href="about.html">About me</a></p>
 </div>
+<div id="quarterly-results" class="section level2 tabset">
+<h2 class="tabset">Quarterly results</h2>
+<div id="by-product" class="section level3">
+<h3>By Product</h3>
+<p>This is my first tab and i can do stuff</p>
+</div>
+<div id="by-region" class="section level3">
+<h3>By Region</h3>
+<p>This is my second tab and it does other stuff</p>
+</div>
+</div>
+</div>
+<div id="this-is-a-new-section" class="section level1">
+<h1>This is a new section</h1>
+<p>and it’s really great</p>
 </div>
 
 
@@ -411,6 +438,11 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
 <script>
 $(document).ready(function ()  {
